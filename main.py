@@ -30,6 +30,7 @@ def run_game(sw, sh, fullscreen):
                 bullets = Group()  # Группа для хранения пуль
                 aliens = Group()  # Группа для хранения пришельцев
                 gf.create_fleet(stngs, screen, aliens)
+                stngs.reset()
                 stats.reset_stats()
                 stats.state = 2
         elif stats.state == 2:  # Игра

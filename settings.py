@@ -56,11 +56,7 @@ class Settings():
         self.alien_space = self.screen_width // self.alien_space_ratio
         self.alien_width = self.screen_width // self.alien_ratio
         self.alien_height = int(self.alien_width * 0.705)
-        if self.test:
-            self.bullet_destroy = False
-            self.bullet_width = 300
-            self.alien_speed_factor = 30
-            self.alien_level_count = 1
+        self.if_test()
 
     def next_lvl(self):
         self.level += 1
@@ -75,8 +71,10 @@ class Settings():
             self.ship_speed_factor = self.screen_width / self.ship_speed
             self.bullet_speed += 10
             self.bullet_speed_factor = self.screen_width / self.bullet_speed
+        self.if_test()
 
     def reset(self):
+        self.level = 1
         self.alien_speed = 1500
         self.alien_speed_factor = self.screen_width / self.alien_speed
         self.fleet_drop = 100
@@ -85,3 +83,11 @@ class Settings():
         self.ship_speed_factor = self.screen_width / self.ship_speed
         self.bullet_speed = 50
         self.bullet_speed_factor = self.screen_width / self.bullet_speed
+        self.if_test()
+
+    def if_test(self):
+        if self.test:
+            self.bullet_destroy = False
+            self.bullet_width = 300
+            self.alien_speed_factor = 30
+            self.level_count = 1
