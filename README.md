@@ -1,2 +1,2 @@
 # Simple-PyGame
-Simple game based oj PyGame (https://www.pygame.org)
+Simple game based on PyGame (https://www.pygame.org)
