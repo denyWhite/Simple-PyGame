@@ -2,7 +2,6 @@ import sys
 import pygame
 from bullet import Bullet
 from alien import Alien
-from colors import Color
 from time import sleep
 
 
@@ -192,14 +191,14 @@ def start(stngs, screen):
 
 
 def win(stngs, screen):
-    screen.fill(Color.navy_blue)
+    screen.fill(stngs.navy_blue_color)
     fontObj = pygame.font.Font('images/12191.ttf', 100)
-    textSurfaceObj = fontObj.render('Победа!', True, Color.yellow, Color.navy_blue)
+    textSurfaceObj = fontObj.render('Победа!', True, stngs.color, stngs.navy_blue_color)
     textRectObj = textSurfaceObj.get_rect()
     textRectObj.center = (screen.get_rect().width // 2 , screen.get_rect().height // 2)
     screen.blit(textSurfaceObj, textRectObj)
     fontObj = pygame.font.Font('images/12191.ttf', 18)
-    textSurfaceObj = fontObj.render('Жми Enter для продолжения или Esc для выхода', True, Color.yellow, Color.navy_blue)
+    textSurfaceObj = fontObj.render('Жми Enter для продолжения или Esc для выхода', True, stngs.color, stngs.navy_blue_color)
     textRectObj = textSurfaceObj.get_rect()
     textRectObj.center = (screen.get_rect().width // 2, screen.get_rect().height - 30)
     screen.blit(textSurfaceObj, textRectObj)
@@ -207,14 +206,14 @@ def win(stngs, screen):
 
 
 def lose(stngs, screen):
-    screen.fill(Color.navy_blue)
+    screen.fill(stngs.navy_blue_color)
     fontObj = pygame.font.Font('images/12191.ttf', 100)
-    textSurfaceObj = fontObj.render('Проигрыш!', True, Color.yellow, Color.navy_blue)
+    textSurfaceObj = fontObj.render('Проигрыш!', True, stngs.color, stngs.navy_blue_color)
     textRectObj = textSurfaceObj.get_rect()
     textRectObj.center = (screen.get_rect().width // 2 , screen.get_rect().height // 2)
     screen.blit(textSurfaceObj, textRectObj)
     fontObj = pygame.font.Font('images/12191.ttf', 18)
-    textSurfaceObj = fontObj.render('Жми Enter для продолжения или Esc для выхода', True, Color.yellow, Color.navy_blue)
+    textSurfaceObj = fontObj.render('Жми Enter для продолжения или Esc для выхода', True, stngs.color, stngs.navy_blue_color)
     textRectObj = textSurfaceObj.get_rect()
     textRectObj.center = (screen.get_rect().width // 2, screen.get_rect().height - 30)
     screen.blit(textSurfaceObj, textRectObj)
