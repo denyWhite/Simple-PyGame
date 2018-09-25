@@ -1,7 +1,7 @@
 class Settings():
     def __init__(self, screen):
         self.framerate = 50  # Framerate
-        self.test = True  # Тестовый режим
+        self.test = False  # Тестовый режим
 
         self.screen_width = screen.get_rect().width
         self.screen_height = screen.get_rect().height
