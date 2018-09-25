@@ -6,7 +6,7 @@ class Settings():
         self.screen_width = screen.get_rect().width
         self.screen_height = screen.get_rect().height
 
-        self.capthion = "My game" # Заголовок экрана
+        self.caption = "My game"  # Заголовок экрана
         self.mouse_visible = False  # Видимость мышки
         self.bg_color = (16,16,16)  # Цвет фона
         self.color = (230, 230, 230)  # Цвет текста
@@ -19,8 +19,8 @@ class Settings():
         self.status_height = self.screen_width // 30
 
         # Параметры корабля
-        self.ship_speed = 150 # За сколько тиков корабль переместиться на всю ширину экрана
-        self.ship_ratio = 15 # Сколько кораблей поместиться в ширину экрана
+        self.ship_speed = 150  # За сколько тиков корабль переместиться на всю ширину экрана
+        self.ship_ratio = 15  # Сколько кораблей поместиться в ширину экрана
         self.ship_speed_factor = self.screen_width / self.ship_speed
         self.ship_width = self.screen_width // self.ship_ratio
         self.ship_height = int(self.ship_width * 1.4825)
@@ -36,19 +36,18 @@ class Settings():
         self.bullet_width = self.screen_width // self.bullet_width_ratio
         self.bullet_height = self.screen_width // self.bullet_height_ratio
 
-
         # Параметры пришельца
         self.alien_ratio = 16  # Сколько пришельцев посместиться в ширину экрана
         self.alien_space_ratio = 90  # Расстояние между пришельцами по высоте
-        self.alien_speed = 1500 # За сколько тиков чужой пролетит весь экран
+        self.alien_speed = 1500  # За сколько тиков чужой пролетит весь экран
         self.fleet_drop = 100  # За сколько тиков флот опуститься на ширину экрана
 
         self.level = 1
-        self.levels = { 1 : [10, 7, 9, 8 ],
-                              2 : [12, 9, 12, 9],
-                              3 : [13, 11, 13, 11],
-                              4 : [13, 12, 13, 12, 13],
-                              5 : [14, 14, 14, 14, 14] }
+        self.levels = {1: [10, 7, 9, 8],
+                       2: [12, 9, 12, 9],
+                       3: [13, 11, 13, 11],
+                       4: [13, 12, 13, 12, 13],
+                       5: [14, 14, 14, 14, 14]}
         self.level_count = len(self.levels)
 
         self.fleet_drop_speed = self.screen_width // self.fleet_drop
@@ -72,13 +71,17 @@ class Settings():
             self.alien_speed_factor = self.screen_width / self.alien_speed
             self.fleet_drop -= 15
             self.fleet_drop_speed = self.screen_width // self.fleet_drop
-            #self.bullet_max_count += 1
             self.ship_speed -= 15
             self.ship_speed_factor = self.screen_width / self.ship_speed
             self.bullet_speed += 10
             self.bullet_speed_factor = self.screen_width / self.bullet_speed
-            print(self.alien_speed_factor,
-                  self.fleet_drop_speed,
-                  self.ship_speed_factor,
-                  self.bullet_speed_factor)
 
+    def reset(self):
+        self.alien_speed = 1500
+        self.alien_speed_factor = self.screen_width / self.alien_speed
+        self.fleet_drop = 100
+        self.fleet_drop_speed = self.screen_width // self.fleet_drop
+        self.ship_speed = 150
+        self.ship_speed_factor = self.screen_width / self.ship_speed
+        self.bullet_speed = 50
+        self.bullet_speed_factor = self.screen_width / self.bullet_speed

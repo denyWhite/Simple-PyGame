@@ -15,7 +15,7 @@ def run_game(sw, sh, fullscreen):
 
     # Настройки экрана
     stngs = Settings(screen)
-    pygame.display.set_caption(stngs.capthion)
+    pygame.display.set_caption(stngs.caption)
     pygame.mouse.set_visible(stngs.mouse_visible)
 
     clock = pygame.time.Clock()
